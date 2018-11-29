@@ -1,0 +1,20 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.tff-template-info {
+  background-color: beige;
+  box-shadow: 0 0 5px black;
+  padding: 1.5rem;
+}
+
+.tff-page-list--item {
+  padding: 1.5rem;
+  margin: 1rem 0 1.5rem;
+  background-color: beige;
+}
+
+.tff-page-list--item h4 {
+  font-weight: bold;
+}
