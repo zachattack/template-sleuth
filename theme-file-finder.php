@@ -66,20 +66,20 @@ function tff_get_template_posts() {
     $all_page_query = new WP_Query( $args );
 
     if ( $all_page_query->have_posts() ) :
-      echo '<div class="tff-page-list--item"><h2>This is all of the pages and there templates.</h2></div>';
+      echo '<div class="tff-page-list--item">
+      <h2>This is all of the pages and their templates.</h2><hr>';
       while ( $all_page_query->have_posts() ) : $all_page_query->the_post();
         // Is the current template info stored in the meta?
         $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
-
-        echo '<div class="tff-page-list--item">';
         echo the_title('<h4><a href="' . esc_url( get_permalink() ) . '">', '</a></h4>');
         if ( 'default' === $current_template ) {
           // We know this is a default template but we want the name.
           echo '<p>' . $template_name . '</p>';
         } else {
           echo '<p>' . $current_template . '</p>'; }
-        echo '</div>';
+          echo '<hr>';
       endwhile;
+      echo '</div>';
     endif;
   }
 }
